@@ -13,6 +13,7 @@ export default Component.extend({
   classNameBindings: [
     'dismissClass',
     'clickableClass',
+    'typeClass',
     'processedType',
     'notification.cssClasses'
   ],
@@ -20,6 +21,10 @@ export default Component.extend({
   attributeBindings: ['notification.type:data-test-notification-message'],
 
   paused: false,
+
+  typeClass: computed('notification.type', function() {
+     return `notification-type-${this.get('notification.type')}`;
+  }),
 
   dismissClass: computed('notification.dismiss', function() {
     if (!this.get('notification.dismiss')) return this.get('styles.c-notification--in');
