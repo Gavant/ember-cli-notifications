@@ -15,7 +15,7 @@
 ## Installation
 
 ```
-ember install ember-cli-notifications
+ember install @gavant/ember-cli-notifications
 ```
 
 

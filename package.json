@@ -2,7 +2,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git@github.com:mansona/ember-cli-notifications.git"
+    "url": "git@github.com:Gavant/ember-cli-notifications.git"
   },
   "license": "MIT",
   "author": "",
