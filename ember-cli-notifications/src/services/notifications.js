@@ -115,10 +115,14 @@ export default class NotificationsService extends Service {
   pauseAutoClear(notification) {
     cancel(notification.timer);
 
-    const elapsed = Date.now() - notification.startTime;
-    const remaining = notification.clearDuration - elapsed;
+    const pauseTime = Date.now();
+    const totalElapsedTime = notification.totalElapsedTime ?? 0;
+    const elapsed = pauseTime - notification.startTime;
+    const newTotalElapsedTime = totalElapsedTime + elapsed;
+    const remaining = notification.clearDuration - newTotalElapsedTime;
 
     set(notification, 'remaining', remaining);
+    set(notification, 'totalElapsedTime', newTotalElapsedTime);
   }
 
   clearAll() {
